@@ -1,0 +1,2 @@
+# calc
+Simple cli calculator
