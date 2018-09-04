@@ -17,6 +17,13 @@ make
 sudo make install
 ```
 
+### Install the pre-compiled code:
+
+```
+curl https://raw.githubusercontent.com/WestleyR/calc/master/easy-install.sh | sh
+sudo mv calc /usr/local/bin/
+```
+
 <br>
 <br>
 

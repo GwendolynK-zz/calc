@@ -1,8 +1,8 @@
 # Created by: Westley K
 # email: westley@sylabs.io
-# Date: Aug 1, 2018
+# Date: Sep 4, 2018
 # https://github.com/WestleyK/calc
-# Version-1.0.0
+# Version-1.0.1
 #
 #
 # MIT License
@@ -29,21 +29,33 @@
 #
 
 
-all: calc.c
-	gcc -g -o calc calc.c
+CODE_NAME = calc.c
+#INFO_NAME = rpi_backlight_info.go
+#INFO_GEN = generator-info.sh
+SCRIPT_NAME = calc
+INSTALL_TO = /usr/local/bin/
+
+
+all: $(CODE_NAME)
+	#@./$(INFO_GEN)
+	@echo "Compileing code..."
+	gcc $(CODE_NAME) -o $(SCRIPT_NAME)
+	#@rm -f $(INFO_NAME)
+	@echo "Done."
+	@echo ">> Do:"
+	@echo "  $$ sudo make install"
 
 install:
-	chmod +x calc
-	cp calc /usr/local/bin
+	chmod +x $(SCRIPT_NAME)
+	cp -f $(SCRIPT_NAME) $(INSTALL_TO)
 
 update:
+	rm -f $(SCRIPT_NAME)
 	git pull origin master
-	gcc -g -o calc calc.c
-	chmod +x calc
-	cp -f calc /usr/local/bin
 
 uninstall:
-	rm /usr/local/bin/calc
+	rm $(INSTALL_TO)$(SCRIPT_NAME)
+
 
 
 #
