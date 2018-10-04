@@ -1,6 +1,6 @@
 ## Simple cli calculator
 
-Very simple and basic cli calculator. <br>
+A very simple and basic cli calculator. <br>
 
 <br>
 <br>
